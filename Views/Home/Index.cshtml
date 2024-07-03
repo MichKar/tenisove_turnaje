@@ -1,0 +1,16 @@
+﻿@model string
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if ((User.Identity.IsAuthenticated) && (User.IsInRole("player"))) {
+    <h2>Vítej hráči!</h2>
+    <p>Prozatím si můžeš prohlédnout popř. editovat turnaje a kurty, na kterých hrajeme. Do budoucna se zde můžeš na jednotlivé turnaje i zapsat.</p>
+}
+@if ((User.Identity.IsAuthenticated) && (User.IsInRole("admin"))) {
+        <h2>Vítej Admine!!!</h2>
+        <p>Máš přístup na vše, tak opatrně. Můžeš si prohlížet a editovat turnaje a kurty. A navíc také vidíš a můžeš měnit role jednotlivých uživatelů.</p>
+}
+
+

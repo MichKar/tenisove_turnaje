@@ -1,0 +1,41 @@
+﻿@using TenisoveTurnaje.DTO
+@model IEnumerable<CourtDTO>
+
+ <h2>Seznam kurtů</h2>    
+    <a class="btn btn-success my-2"  asp-action="Create">+ Vytvořit nový kurt</a>
+
+<table class="table">
+ <thead>
+        <tr>
+            <th>Název</th>
+            <th>Adresa </th>
+            <th>Počet kurtů</th>
+            <th>Editace</th>
+            <th>Výmaz</th>
+           
+        </tr>
+         </thead> 
+  <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.NumberOfCourts)
+                </td>
+                <td>
+                    <a class="btn btn-warning" asp-action="Update" asp-route-id="@item.Id">Upravit</a>
+                         </td>
+                    <td>
+                    <form method="POST" class="d-inline-block"> 
+                        <button type="submit" class="btn btn-danger" asp-action="Delete" asp-route-id=@item.Id>Smazat</button>
+                    </form>
+                </td>
+            </tr>
+        }
+ </tbody>
+</table>

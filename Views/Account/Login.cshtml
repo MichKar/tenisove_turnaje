@@ -1,0 +1,25 @@
+﻿@using TenisoveTurnaje.ViewModels
+@model LoginVM
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Přihlašení do aplikace</h2>
+<div class="text-danger" asp-validation-summary="All"></div>
+<form asp-action="Login" method="post">
+    <input type="hidden" asp-for="ReturnUrl" />
+    <div class="form-group">
+        <label asp-for="UserEmail">Email</label>
+        <input asp-for="UserEmail" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Password">Heslo</label>
+        <input type="password" asp-for="Password" class="form-control" />
+        <br />
+        Zapamatovat si mě <input type="checkbox" asp-for="Remember" />
+
+
+    </div>
+        <br />
+    <button class="btn btn-primary" type="submit">Přihlásit</button>
+</form>

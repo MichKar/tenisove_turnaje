@@ -1,0 +1,33 @@
+﻿@using TenisoveTurnaje.ViewModels
+
+@model IEnumerable<TournamentsVM>
+    <h2>Všechny turnaje</h2>    
+    <a class="btn btn-success my-2"  asp-action="Create">+ Vytvořit nový turnaj</a>
+  
+<table class="table">
+    <thead>
+        <tr>
+            <th>Datum</th>
+            <th>Název</th>
+            <th>Místo</th>
+            <th>Počet kurtů</th>
+            <th>Editace</th>
+            <th>Výmaz</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+                        <tr>
+                            <td>@item.Date </td>
+                            <td>@item.Name</td>
+                            <td>@item.CourtName</td>
+                            <td>@item.NumberOfCourts</td>
+                            <td><a class="btn btn-warning" asp-action="Update" asp-route-id="@item.Id">Upravit</a> </td>
+                            <td><form method="POST" class="d-inline-block"> 
+                                      <button type="submit" class="btn btn-danger"  asp-action="Delete" asp-route-id="@item.Id">Smazat</button>
+                                </form>
+                            </td>
+                        </tr>
+        }
+    </tbody>
+</table>

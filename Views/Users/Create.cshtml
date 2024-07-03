@@ -1,0 +1,26 @@
+﻿@using TenisoveTurnaje.ViewModels
+
+@model UserVM
+@{
+    ViewData["Title"] = "CREATE USER";
+}
+<h2>Vytvoření uživatele</h2>
+<hr />
+<a asp-action="Index" class="btn btn-secondary">Zpět</a>
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Name">Jméno uživatele</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+     <div class="form-group">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+     <div class="form-group">
+        <label asp-for="Password">Heslo</label>
+        <input asp-for="Password" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Vytvořit</button>
+</form>

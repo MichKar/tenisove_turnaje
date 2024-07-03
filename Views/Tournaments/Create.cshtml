@@ -1,0 +1,18 @@
+﻿@using TenisoveTurnaje.DTO
+@model TournamentDTO
+<h2>Vytvoření turnaje</h2>
+<hr />
+<a asp-action="Index" class="btn btn-secondary">Zpět</a>
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Name">Název turnaje</label>
+        <input type="text" asp-for="Name" class="form-control"/>
+
+        <label asp-for="Date">Datum</label>
+        <input type="text" asp-for="Date" class="form-control" />
+
+         <label asp-for="CourtId" class="control-label">Místo</label>
+            <select asp-for="CourtId" class="form-control" asp-items="ViewBag.Courts"></select>
+    </div>
+    <input type="submit" class="btn btn-success" value="Vytvořit"/>
+</form>

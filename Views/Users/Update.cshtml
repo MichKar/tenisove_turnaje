@@ -1,0 +1,40 @@
+﻿
+@model User
+
+
+@{
+    ViewData["Title"] = "Update user";
+}
+
+<h2>Editace uživatele</h2>
+<hr />
+<a asp-action="Index" class="btn btn-secondary">Zpět</a>
+<div asp-validation-summary="All" class="text-danger"></div>
+
+        <form asp-action="Update" method="post">
+
+            <div class="form-group">
+                <label asp-for="Id"></label>
+                <input asp-for="Id" class="form-control" disabled />
+            </div>
+
+             <div class="form-group">
+                <label asp-for="UserName">Jméno</label>
+                <input asp-for="UserName" class="form-control" disabled />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email">Email</label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Heslo</label>
+                <input name="password" class="form-control" />
+            </div>
+
+                <button type="submit" class="btn btn-primary">Uložit</button>
+            </div>
+        </form>
+    </div>
+</div>

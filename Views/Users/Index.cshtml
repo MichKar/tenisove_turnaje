@@ -1,0 +1,32 @@
+﻿@model IEnumerable<User>
+@{
+    ViewData["Title"] = "READ USER";
+}
+
+<h2>Všichni uživatelé</h2>
+<a asp-action="Create" class="btn btn-success my-2">+ Vytvořit nového uživatele</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Jméno</th>
+            <th>Email</th>
+            <th>Editace</th>
+            <th>Výmaz</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (User user in Model) {
+                    <tr>
+                        <td>@user.Id </td>
+                        <td>@user.UserName</td>
+                        <td>@user.Email</td>
+                        <td><a class="btn btn-warning" asp-action="Update" asp-route-id="@user.Id">Upravit</a> </td>
+                        <td><form method="POST" class="d-inline-block" asp-action="Delete" asp-route-id="@user.Id"> 
+                              <button type="submit" class="btn btn-danger">Smazat</button>
+                            </form>
+                        </td>
+                    </tr>
+        }
+    </tbody>
+</table>

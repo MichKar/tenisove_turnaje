@@ -1,0 +1,45 @@
+﻿@model RoleEdit
+@{
+    ViewData["Title"] = "UPDATE ROLE";
+}
+<h2 class="bg-info text-white">Úprava role</h2>
+<hr />
+<a asp-action="Index" class="btn btn-secondary">Zpět</a>
+<div asp-validation-summary="All" class="text-danger"></div>
+<form method="post">
+    <input type="hidden" name="roleName" value="@Model.Role.Name" />
+    <input type="hidden" name="roleId" value="@Model.Role.Id" />
+    <h2 class="bg-info p-1 text-white">Přidat k @Model.Role.Name</h2>
+    <table class="table table-sm">
+        @if (Model.RoleNonMembers.Count() == 0) {
+                <tr><td colspan="2">Všichni jsou členy</td></tr>
+        }
+        else {
+            @foreach (User user in Model.RoleNonMembers) {
+                        <tr>
+                            <td>@user.UserName</td>
+                            <td>
+                                <input type="checkbox" name="AddIds" value="@user.Id">
+                            </td>
+                        </tr>
+            }
+        }
+    </table>
+    <h2 class="bg-info p-1 text-white">Odebrat z @Model.Role.Name</h2>
+    <table class="table table-bordered table-sm">
+        @if (Model.RoleMembers.Count() == 0) {
+                <tr><td colspan="2">Nikdo není členem</td></tr>
+        }
+        else {
+            @foreach (User user in Model.RoleMembers) {
+                        <tr>
+                            <td>@user.UserName</td>
+                            <td>
+                                <input type="checkbox" name="DeleteIds" value="@user.Id">
+                            </td>
+                        </tr>
+            }
+        }
+    </table>
+    <button type="submit" class="btn btn-primary">Uložit</button>
+</form>

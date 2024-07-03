@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TenisoveTurnaje</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TenisoveTurnaje.styles.css" asp-append-version="true" />
+</head>
+<body  class="bg-success" style="background-image: url('/images/tennis-1671852_1280.jpg'); background-size: cover; background-position: center; height: 100vh;">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TenisoveTurnaje</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Domů</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Info">Info</a>
+                        </li>
+                        @* jen pro přihlášené (admin+player) *@
+                        @if ((User.Identity.IsAuthenticated)) {
+                         <li class="nav-item">
+                            <a class="nav-link text-dark"  asp-controller="Tournaments" asp-action="Index">Turnaje</a>
+                        </li>
+                     
+                           <li class="nav-item">
+                            <a class="nav-link text-dark"  asp-controller="Courts" asp-action="Index">Kurty</a>
+                        </li>
+                        }
+                        @* Jen pro admina *@
+                        @if ((User.Identity.IsAuthenticated) && (User.IsInRole("admin"))) {
+                           <li class="nav-item">
+                            <a class="nav-link text-dark"  asp-controller="Users" asp-action="Index">Uživatelé</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-dark"  asp-controller="Roles" asp-action="Index">Role</a>
+                        </li>
+                        }
+                         @* jen pro přihlášené (admin+player) *@
+                        @if ((User.Identity.IsAuthenticated)) {
+                            <li class="nav-item" style="margin-left: auto;"> <a asp-controller="Account" asp-action="Logout" class="btn btn-danger">Odhlásit</a></li>
+                        }
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container bg-light bg-gradient rounded p-4"  style="--bs-bg-opacity: .95;">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    
+    <footer class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3border-top footer text-muted lh-lg">
+        <div class="container text-wrap">
+            <p>&copy; Michaela Karafiátová 2024 - Tenisové Turnaje</p>
+            <p>Vytvořeno v .NET Core EntityFramework, vystaveno na Azure</p>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
