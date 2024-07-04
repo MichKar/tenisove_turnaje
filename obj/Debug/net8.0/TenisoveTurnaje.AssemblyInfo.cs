@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TenisoveTurnaje")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+537e6438100d282613a454458af34d721dca3d32")]
 [assembly: System.Reflection.AssemblyProductAttribute("TenisoveTurnaje")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TenisoveTurnaje")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

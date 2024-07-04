@@ -256,3 +256,4 @@ C:\IT\CSHARP - OOP\TenisoveTurnaje\obj\Release\net8.0\refint\TenisoveTurnaje.dll
 C:\IT\CSHARP - OOP\TenisoveTurnaje\obj\Release\net8.0\TenisoveTurnaje.pdb
 C:\IT\CSHARP - OOP\TenisoveTurnaje\obj\Release\net8.0\TenisoveTurnaje.genruntimeconfig.cache
 C:\IT\CSHARP - OOP\TenisoveTurnaje\obj\Release\net8.0\ref\TenisoveTurnaje.dll
+C:\IT\CSHARP - OOP\TenisoveTurnaje\obj\Release\net8.0\TenisoveTurnaje.sourcelink.json

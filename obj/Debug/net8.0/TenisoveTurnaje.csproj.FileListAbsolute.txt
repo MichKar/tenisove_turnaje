@@ -256,3 +256,4 @@ C:\IT\CSHARP - OOP\TenisoveTurnaje\bin\Debug\net8.0\Microsoft.AspNetCore.Identit
 C:\IT\CSHARP - OOP\TenisoveTurnaje\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
 C:\IT\CSHARP - OOP\TenisoveTurnaje\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
 C:\IT\CSHARP - OOP\TenisoveTurnaje\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\IT\CSHARP - OOP\TenisoveTurnaje\obj\Debug\net8.0\TenisoveTurnaje.sourcelink.json
